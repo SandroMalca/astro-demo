@@ -2,6 +2,7 @@
 import CardLaunch from "./CardLaunch.astro";
 import { getLatestLaunches} from "../services/spacex";
 const launches = await getLatestLaunches()
+
 ---
 
 <div class="grid gap-8 sm_grid-cols-2 lg:grid-cols-3">
@@ -11,7 +12,8 @@ const launches = await getLatestLaunches()
             img={launch.links.patch.small}
             flightNumber={launch.flight_number}
             details={launch.details}
-            success={launch.success}
-        />
+            success={launch.success}             
+        />  
     ))}
+    
 </div>
